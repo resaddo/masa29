@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)file:///C:/Users/user/Desktop/Masa-29.html -->
+<html lang="az"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masa Planlama</title>
+<style>
+body { font-family: Arial; margin:0; background:#f9fafb; }
+.wrapper { display:flex; gap:20px; padding:20px; }
+.left, .right { background:#fff; padding:15px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+.left { flex:1; overflow:auto; }
+.right { flex:1; }
+
+h2 { margin-top:0; }
+
+/* Table */
+table { border-collapse: collapse; width:100%; }
+th, td { border: 1px solid #ddd; padding: 6px; text-align:left; }
+th { background: #f0f0f0; }
+
+input { width:100%; padding:4px; }
+select { width:100%; }
+
+/* Name states */
+.name-bold { font-weight:bold; }
+.name-assigned { font-weight:normal; }
+
+/* Status colors */
+.status-qohum { color:blue; }
+.status-ikisahil { color:black; }
+.status-usaq { color:red; }
+.status-tek { color:green; }
+.status-aile { color:orange; }
+
+/* Tables area */
+.container { display:grid; grid-template-columns: repeat(3, 1fr); gap:15px; }
+.card { background:#fff; padding:10px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1);} 
+.card h4 { margin:0 0 5px 0; }
+.counter { font-size:12px; color:#666; margin-bottom:5px; }
+.warning { color:red; font-size:12px; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .wrapper { flex-direction:column; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+<!-- LEFT SIDE -->
+<div class="left">
+<h2>📋 Siyahı</h2>
+
+<!-- Filter -->
+<label>Status filter: </label>
+<select id="filterStatus">
+  <option value="all">Hamısı</option>
+  <option value="qohum">Qohum</option>
+  <option value="ikisahil">İki sahil</option>
+  <option value="usaq">Uşaq</option>
+  <option value="tek">Tək</option>
+  <option value="aile">Ailə</option>
+</select>
+
+<table id="listTable">
+<tbody><tr>
+<th>#</th>
+<th>Ad Soyad</th>
+<th>Status</th>
+<th>Masa No</th>
+</tr>
+<tr><td>1</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>2</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>3</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>4</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>5</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>6</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>7</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>8</td><td><input placeholder="Ad Soyad" class="name-assigned status-usaq"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>9</td><td><input placeholder="Ad Soyad" class="name-assigned status-usaq"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>10</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>11</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>12</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>13</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>14</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>15</td><td><input placeholder="Ad Soyad" class="name-assigned status-usaq"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>16</td><td><input placeholder="Ad Soyad" class="name-assigned status-usaq"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>17</td><td><input placeholder="Ad Soyad" class="name-assigned status-usaq"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>18</td><td><input placeholder="Ad Soyad" class="name-assigned status-usaq"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>19</td><td><input placeholder="Ad Soyad" class="name-assigned status-usaq"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>20</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>21</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>22</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>23</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>24</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>25</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>26</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>27</td><td><input placeholder="Ad Soyad" class="name-assigned status-usaq"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>28</td><td><input placeholder="Ad Soyad" class="name-assigned status-usaq"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>29</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>30</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>31</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>32</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>33</td><td><input placeholder="Ad Soyad" class="name-assigned status-usaq"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>34</td><td><input placeholder="Ad Soyad" class="name-assigned status-usaq"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>35</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>36</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>37</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>38</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>39</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>40</td><td><input placeholder="Ad Soyad" class="name-assigned status-usaq"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>41</td><td><input placeholder="Ad Soyad" class="name-assigned status-usaq"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>42</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>43</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>44</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>45</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>46</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>47</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>48</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>49</td><td><input placeholder="Ad Soyad" class="name-assigned status-usaq"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>50</td><td><input placeholder="Ad Soyad" class="name-assigned status-usaq"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>51</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>52</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>53</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>54</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>55</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>56</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>57</td><td><input placeholder="Ad Soyad" class="name-assigned status-usaq"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>58</td><td><input placeholder="Ad Soyad" class="name-assigned status-usaq"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>59</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>60</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>61</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>62</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>63</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>64</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>65</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>66</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>67</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>68</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>69</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>70</td><td><input placeholder="Ad Soyad" class="name-assigned status-usaq"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>71</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>72</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>73</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>74</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>75</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>76</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>77</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>78</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>79</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>80</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>81</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>82</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>83</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>84</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>85</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>86</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>87</td><td><input placeholder="Ad Soyad" class="name-assigned status-aile"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>88</td><td><input placeholder="Ad Soyad" class="name-assigned status-aile"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>89</td><td><input placeholder="Ad Soyad" class="name-assigned status-aile"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>90</td><td><input placeholder="Ad Soyad" class="name-assigned status-aile"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>91</td><td><input placeholder="Ad Soyad" class="name-assigned status-aile"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>92</td><td><input placeholder="Ad Soyad" class="name-assigned status-aile"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>93</td><td><input placeholder="Ad Soyad" class="name-assigned status-aile"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>94</td><td><input placeholder="Ad Soyad" class="name-assigned status-aile"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>95</td><td><input placeholder="Ad Soyad" class="name-assigned status-aile"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>96</td><td><input placeholder="Ad Soyad" class="name-assigned status-aile"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>97</td><td><input placeholder="Ad Soyad" class="name-assigned status-aile"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>98</td><td><input placeholder="Ad Soyad" class="name-assigned status-aile"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>99</td><td><input placeholder="Ad Soyad" class="name-assigned status-aile"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>100</td><td><input placeholder="Ad Soyad" class="name-assigned status-aile"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>101</td><td><input placeholder="Ad Soyad" class="name-assigned status-usaq"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>102</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>103</td><td><input placeholder="Ad Soyad" class="name-assigned status-qohum"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>104</td><td><input placeholder="Ad Soyad" class="name-assigned status-usaq"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>105</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>106</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>107</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>108</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>109</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>110</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>111</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>112</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>113</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>114</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>115</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>116</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>117</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>118</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>119</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>120</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>121</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>122</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>123</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>124</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>125</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>126</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>127</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>128</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>129</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>130</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>131</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>132</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>133</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>134</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>135</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>136</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>137</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>138</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>139</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>140</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>141</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>142</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>143</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>144</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>145</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>146</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>147</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>148</td><td><input placeholder="Ad Soyad" class="name-assigned"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>149</td><td><input placeholder="Ad Soyad" class="name-assigned"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>150</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>151</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>152</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>153</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>154</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>155</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>156</td><td><input placeholder="Ad Soyad" class="name-assigned status-tek"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>157</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr><tr><td>158</td><td><input placeholder="Ad Soyad" class="name-assigned status-ikisahil"></td><td><select>
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  </select></td><td><select><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">Özəl</option><option value="14">Ehtiyat</option></select></td></tr></tbody></table>
+</div>
+
+<!-- RIGHT SIDE -->
+<div class="right">
+<h2>🍽️ Masalar</h2>
+<div class="container" id="tablesContainer"><div class="card"><h4>Masa 1</h4><div class="counter">Nəfər sayı: 12</div><div class="warning"></div><ul><li class="status-qohum">Rüfət B</li><li class="status-tek">Rahim</li><li class="status-qohum">Rəşad B</li><li class="status-qohum">Şəhriyar K</li><li class="status-tek">Kənan Vəliyev</li><li class="status-tek">Elvin</li><li class="status-tek">Hüseyn</li><li class="status-tek">Taleh H</li><li class="status-tek">Zaur </li><li class="status-tek">İlkin A</li><li class="status-tek">Anar Ə</li><li class="status-tek">Mehman M</li></ul></div><div class="card"><h4>Masa 2</h4><div class="counter">Nəfər sayı: 12</div><div class="warning"></div><ul><li class="status-qohum">Tofiq </li><li class="status-qohum">İnci</li><li class="status-qohum">Rasim M</li><li class="status-qohum">Nigar M</li><li class="status-qohum">Əli M</li><li class="status-qohum">Aynur M</li><li class="status-qohum">Tofiq</li><li class="status-qohum">Rüxsarə</li><li class="status-qohum">İlqar R</li><li class="status-qohum">Nərgiz </li><li class="status-qohum">Anar Qurbanov</li><li class="status-qohum">Roza Q</li></ul></div><div class="card"><h4>Masa 3</h4><div class="counter">Nəfər sayı: 12</div><div class="warning"></div><ul><li class="status-qohum">Adəm B</li><li class="status-qohum">Sara B</li><li class="status-qohum">Baxtiyar B</li><li class="status-qohum">Aliyə B</li><li class="status-qohum">Şəhriyar B</li><li class="status-qohum">Aytən B</li><li class="status-qohum">Sənan V</li><li class="status-qohum">Jalə V</li><li class="status-qohum">Şahin Q</li><li class="status-qohum">Sona Q</li><li class="status-qohum">Vaqif </li><li class="status-qohum">Elnarə</li></ul></div><div class="card"><h4>Masa 4</h4><div class="counter">Nəfər sayı: 12</div><div class="warning"></div><ul><li class="status-qohum">Narı B</li><li class="status-qohum">Zərifə B</li><li class="status-qohum">Zeynəb B</li><li class="status-qohum">Nigar B</li><li class="status-usaq">Sara B</li><li class="status-qohum">Günel R</li><li class="status-usaq">Ayan </li><li class="status-ikisahil">Elza H</li><li class="status-ikisahil">Nilufər V</li><li>Nazlı Ə</li><li>Xanım R</li><li class="status-ikisahil">Gülər F</li></ul></div><div class="card"><h4>Masa 5</h4><div class="counter">Nəfər sayı: 12</div><div class="warning"></div><ul><li class="status-aile">Ramil V</li><li class="status-aile">Kəmalə</li><li class="status-aile">Nail R</li><li class="status-aile">Ülkər</li><li class="status-aile">Zamin M</li><li class="status-aile">Könül</li><li class="status-aile">Zamin Ə</li><li class="status-aile">Aynur</li><li class="status-aile">İslam A</li><li class="status-aile">Elşanə</li><li class="status-aile">Orxan A</li><li class="status-aile">Fərqanə</li></ul></div><div class="card"><h4>Masa 6</h4><div class="counter">Nəfər sayı: 11</div><div class="warning"></div><ul><li class="status-qohum">Tural M</li><li class="status-qohum">Samirə M</li><li class="status-qohum">Samxal M</li><li class="status-qohum">Sahilə M</li><li class="status-qohum">Aysun</li><li class="status-tek">Razim M</li><li class="status-tek">Rahim İbrahimli</li><li class="status-aile">Xəyal Q</li><li class="status-aile">Xəyal Qy</li><li class="status-qohum">Rəşad V</li><li class="status-qohum">Gözəl</li></ul></div><div class="card"><h4>Masa 7</h4><div class="counter">Nəfər sayı: 12</div><div class="warning"></div><ul><li class="status-qohum">Sara Bağırova</li><li class="status-qohum">Almaz Ə</li><li class="status-qohum">Əli Həsənov</li><li class="status-qohum">Fatma H</li><li class="status-qohum">Zəfər Məmmədov</li><li class="status-qohum">Səkinə Rzayeva</li><li class="status-qohum">Eldəniz R</li><li class="status-qohum">Yegane R</li><li class="status-qohum">Səfurə Hüseynova</li><li class="status-qohum">Səlimə Quliyeva</li><li class="status-qohum">Etibar Qurbanov</li><li class="status-qohum">Gülnar Q</li></ul></div><div class="card"><h4>Masa 8</h4><div class="counter">Nəfər sayı: 12</div><div class="warning"></div><ul><li class="status-qohum">Eldar Bağırov</li><li class="status-qohum">Həqiqət B</li><li class="status-qohum">Samirə B</li><li class="status-qohum">Qadir</li><li class="status-qohum">Lalə</li><li class="status-qohum">Vəli Bağırov</li><li class="status-qohum">Zülfiyyə B</li><li class="status-qohum">Hikmət Bağırov</li><li class="status-qohum">Aynur BM</li><li class="status-qohum">Qorxmaz M</li><li class="status-qohum">Elçin Mehdiyev</li><li class="status-qohum">Yegane M</li></ul></div><div class="card"><h4>Masa 9</h4><div class="counter">Nəfər sayı: 10</div><div class="warning"></div><ul><li class="status-ikisahil">Əli MN</li><li class="status-ikisahil">Anar M</li><li class="status-ikisahil">Nüsrət M</li><li class="status-ikisahil">Araz V</li><li class="status-ikisahil">Vüsal B</li><li class="status-ikisahil">Namiq B</li><li class="status-ikisahil">Nurlan M</li><li class="status-tek">Rasim H</li><li class="status-tek">Elçin O</li><li class="status-ikisahil">Məhərrəm A</li></ul></div><div class="card"><h4>Masa 10</h4><div class="counter">Nəfər sayı: 12</div><div class="warning"></div><ul><li class="status-ikisahil">Xuraman M</li><li class="status-ikisahil">Rəqsanə M</li><li class="status-ikisahil">Şəmsiyyə Ə</li><li class="status-ikisahil">Mətanət B</li><li class="status-ikisahil">Günel E</li><li class="status-ikisahil">Nigar O</li><li class="status-ikisahil">Şahnigar</li><li class="status-ikisahil">Sevinc A</li><li class="status-ikisahil">Mənsumə B</li><li class="status-ikisahil">Səbinə K</li><li class="status-ikisahil">Leyla Ş</li><li class="status-ikisahil">Nubar S</li></ul></div><div class="card"><h4>Masa 11</h4><div class="counter">Nəfər sayı: 12</div><div class="warning"></div><ul><li class="status-ikisahil">Vüqar R</li><li class="status-ikisahil">İsmayıl H</li><li class="status-ikisahil">Tahir T</li><li class="status-ikisahil">Əhməd Q</li><li class="status-ikisahil">Elçin Z</li><li class="status-ikisahil">Zahid R</li><li class="status-ikisahil">Musa Ə</li><li class="status-ikisahil">Elçin K</li><li class="status-ikisahil">Cavid Ə</li><li class="status-ikisahil">Ceyhun P</li><li class="status-ikisahil">Orxan İ</li><li class="status-ikisahil">Məhərrəm Ə</li></ul></div><div class="card"><h4>Masa 12</h4><div class="counter">Nəfər sayı: 11</div><div class="warning"></div><ul><li class="status-qohum">Nemət B</li><li class="status-tek">Emin</li><li class="status-tek">Elnur Q</li><li class="status-tek">Rəfael N</li><li class="status-tek">Samir Ə</li><li class="status-tek">Şəmil Ə</li><li class="status-tek">Qabil m</li><li class="status-tek">Qurban m</li><li class="status-tek">Müşviq </li><li class="status-tek">Müşviq m</li><li class="status-tek">Əli dost</li></ul></div><div class="card"><h4>Masa Özəl</h4><div class="counter">Nəfər sayı: 5</div><div class="warning"></div><ul><li class="status-usaq">Emil</li><li class="status-usaq">Vəliko</li><li class="status-usaq">Murad B</li><li class="status-usaq">Cavid</li><li class="status-usaq">Ayxan Ako</li></ul></div><div class="card"><h4>Masa Ehtiyat</h4><div class="counter">Nəfər sayı: 13</div><div class="warning">⚠️ Limit aşıldı!</div><ul><li class="status-usaq">Eldar Elo</li><li class="status-usaq">Zülfiyyə</li><li class="status-usaq">Nəzrin</li><li class="status-usaq">Həvva</li><li class="status-usaq">Nihat</li><li class="status-usaq">Aylin</li><li class="status-usaq">Gülay</li><li class="status-usaq">Həcər </li><li class="status-usaq">Ülkər</li><li class="status-usaq">Əhməd</li><li class="status-usaq">Əfruz</li><li class="status-usaq">Nazim</li><li class="status-usaq">Aybəniz R</li></ul></div></div>
+</div>
+
+</div>
+
+<script>
+const totalPeople = 158;
+const totalTables = 14;
+const maxPerTable = 12;
+const STORAGE_KEY = "masa_planlama_data_v2";
+
+const listTable = document.getElementById("listTable");
+const filterSelect = document.getElementById("filterStatus");
+
+function loadData() {
+  const data = localStorage.getItem(STORAGE_KEY);
+  return data ? JSON.parse(data) : [];
+}
+
+function saveData() {
+  const rows = listTable.rows;
+  const data = [];
+
+  for (let i = 1; i < rows.length; i++) {
+    const name = rows[i].cells[1].querySelector("input").value;
+    const status = rows[i].cells[2].querySelector("select").value;
+    const tableNo = rows[i].cells[3].querySelector("select").value;
+    data.push({ name, status, tableNo });
+  }
+
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+const savedData = loadData();
+
+function applyStatusClass(el, status) {
+  el.classList.remove("status-qohum","status-ikisahil","status-usaq","status-tek","status-aile");
+  if (status) el.classList.add("status-" + status);
+}
+
+// Create rows
+for (let i = 0; i < totalPeople; i++) {
+  const row = listTable.insertRow();
+
+  const indexCell = row.insertCell(0);
+  const nameCell = row.insertCell(1);
+  const statusCell = row.insertCell(2);
+  const tableCell = row.insertCell(3);
+
+  indexCell.textContent = i + 1;
+
+  const input = document.createElement("input");
+  input.placeholder = "Ad Soyad";
+
+  const status = document.createElement("select");
+  status.innerHTML = `
+    <option value=""></option>
+    <option value="qohum">Qohum</option>
+    <option value="ikisahil">İki sahil</option>
+    <option value="usaq">Uşaq</option>
+    <option value="tek">Tək</option>
+    <option value="aile">Ailə</option>
+  `;
+
+  const select = document.createElement("select");
+  select.innerHTML = '<option value=""></option>' +
+    Array.from({length: totalTables}, (_, i) => {
+      if (i === 12) return `<option value="13">Özəl</option>`;
+      if (i === 13) return `<option value="14">Ehtiyat</option>`;
+      return `<option value="${i+1}">${i+1}</option>`;
+    }).join("");
+
+  if (savedData[i]) {
+    input.value = savedData[i].name || "";
+    status.value = savedData[i].status || "";
+    select.value = savedData[i].tableNo || "";
+  }
+
+  updateNameStyle(input, select.value);
+  applyStatusClass(input, status.value);
+
+  input.oninput = () => { saveData(); updateTables(); };
+
+  status.onchange = () => {
+    applyStatusClass(input, status.value);
+    saveData();
+    updateTables();
+    applyFilter();
+  };
+
+  select.onchange = () => {
+    updateTables();
+    updateNameStyle(input, select.value);
+    saveData();
+  };
+
+  nameCell.appendChild(input);
+  statusCell.appendChild(status);
+  tableCell.appendChild(select);
+}
+
+function updateNameStyle(input, tableValue) {
+  if (tableValue) {
+    input.classList.remove("name-bold");
+    input.classList.add("name-assigned");
+  } else {
+    input.classList.add("name-bold");
+    input.classList.remove("name-assigned");
+  }
+}
+
+// Filter logic
+function applyFilter() {
+  const value = filterSelect.value;
+  const rows = listTable.rows;
+
+  for (let i = 1; i < rows.length; i++) {
+    const status = rows[i].cells[2].querySelector("select").value;
+    rows[i].style.display = (value === "all" || value === status) ? "" : "none";
+  }
+}
+
+filterSelect.onchange = applyFilter;
+
+// Create tables
+const container = document.getElementById("tablesContainer");
+const tables = [];
+const counters = [];
+const warnings = [];
+
+for (let i = 0; i < totalTables; i++) {
+  const tableDiv = document.createElement("div");
+  tableDiv.className = "card";
+
+  const title = document.createElement("h4");
+  if (i === 12) title.textContent = "Masa Özəl";
+  else if (i === 13) title.textContent = "Masa Ehtiyat";
+  else title.textContent = `Masa ${i+1}`;
+
+  const counter = document.createElement("div");
+  counter.className = "counter";
+
+  const warning = document.createElement("div");
+  warning.className = "warning";
+
+  const ul = document.createElement("ul");
+
+  tables.push(ul);
+  counters.push(counter);
+  warnings.push(warning);
+
+  tableDiv.appendChild(title);
+  tableDiv.appendChild(counter);
+  tableDiv.appendChild(warning);
+  tableDiv.appendChild(ul);
+
+  container.appendChild(tableDiv);
+}
+
+function updateTables() {
+  tables.forEach(t => t.innerHTML = "");
+  counters.forEach(c => c.textContent = "");
+  warnings.forEach(w => w.textContent = "");
+
+  const counts = Array(totalTables).fill(0);
+  const rows = listTable.rows;
+
+  for (let i = 1; i < rows.length; i++) {
+    const nameInput = rows[i].cells[1].querySelector("input");
+    const name = nameInput.value;
+    const status = rows[i].cells[2].querySelector("select").value;
+    const tableNo = rows[i].cells[3].querySelector("select").value;
+
+    if (name && tableNo) {
+      const index = tableNo - 1;
+      counts[index]++;
+
+      const li = document.createElement("li");
+      li.textContent = name;
+      applyStatusClass(li, status);
+
+      tables[index].appendChild(li);
+    }
+  }
+
+  counts.forEach((count, i) => {
+    counters[i].textContent = `Nəfər sayı: ${count}`;
+    if (count > maxPerTable) {
+      warnings[i].textContent = "⚠️ Limit aşıldı!";
+    }
+  });
+}
+
+updateTables();
+</script>
+
+
+
+</body></html>
